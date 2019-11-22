@@ -3,7 +3,10 @@
     <string name="write_query">Введите текст запроса</string>
     <string name="search">Найти</string>
     <string name="profile_download_error">Не удалось загрузить профиль</string>
+    <string name="internet_unavailable">Отсутствует интернет соединение</string>
+
     <string name="items_are_missing">По вашему запросу ничего не найдено</string>
-    <string name="internet_are_missing">Отсутствует интернет соединение</string>
+    <string name="profile_name">Имя</string>
+
 
 </resources>

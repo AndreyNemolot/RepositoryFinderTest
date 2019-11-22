@@ -1,7 +1,7 @@
 package com.andrey.fbstest.repository
 
-import com.andrey.fbstest.model.RepoItem
-import com.andrey.fbstest.model.RepoItems
+import com.andrey.fbstest.model.repository.RepoItem
+import com.andrey.fbstest.model.repository.RepoItems
 import com.andrey.fbstest.network.Controller
 import retrofit2.Call
 import retrofit2.Callback

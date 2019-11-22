@@ -1,4 +1,4 @@
-package com.andrey.fbstest.model
+package com.andrey.fbstest.model.repository
 
 data class RepoItem(
     var name: String = "",

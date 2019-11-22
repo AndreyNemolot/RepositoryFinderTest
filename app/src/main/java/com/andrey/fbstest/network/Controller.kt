@@ -1,6 +1,6 @@
 package com.andrey.fbstest.network
 
-import com.andrey.fbstest.model.RepoItems
+import com.andrey.fbstest.model.repository.RepoItems
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.Call

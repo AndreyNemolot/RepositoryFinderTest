@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList;
 import android.view.LayoutInflater
 import android.widget.TextView
-import com.andrey.fbstest.model.RepoItem
+import com.andrey.fbstest.model.repository.RepoItem
 import kotlinx.android.synthetic.main.note_item.view.*
 
 

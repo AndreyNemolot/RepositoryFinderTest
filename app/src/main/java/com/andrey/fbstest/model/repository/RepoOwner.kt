@@ -1,4 +1,4 @@
-package com.andrey.fbstest.model
+package com.andrey.fbstest.model.repository
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
