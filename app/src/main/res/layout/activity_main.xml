@@ -8,74 +8,30 @@
     tools:context=".MainActivity"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/queryItem"
-        android:layout_alignParentTop="true"
-         />
-
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/progressBar"
-        android:layout_centerInParent="true"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-    </androidx.core.widget.ContentLoadingProgressBar>
-
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/progressBarInTheEnd"
-        android:layout_above="@+id/queryItem"
-        android:layout_centerInParent="true"
-        style="?android:attr/progressBarStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-    </androidx.core.widget.ContentLoadingProgressBar>
-
     <TextView
-        android:id="@+id/missingItemsView"
+        android:id="@+id/errorMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/items_are_missing"
         android:textAppearance="@style/text_black_20"
         android:layout_centerInParent="true"
         android:visibility="gone"
         >
     </TextView>
 
-    <LinearLayout
-        android:id="@+id/queryItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentEnd="true"
-        android:weightSum="10"
-        android:layout_alignParentBottom="true">
+    <FrameLayout
+        android:id="@+id/listFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:visibility="visible">
+    </FrameLayout>
 
-        <EditText
-            android:id="@+id/query"
-            android:layout_width="0dp"
-            android:layout_weight="7"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="20dp"
-            android:hint="@string/write_query">
-        </EditText>
-
-
-        <Button
-            android:id="@+id/searchRepo"
-            android:onClick="searchRepoClick"
-            android:hint="@string/search"
-            android:layout_weight="3"
-            android:layout_marginEnd="10dp"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp">
-
-        </Button>
-    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/profileFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:visibility="gone">
+    </FrameLayout>
 
 </RelativeLayout>

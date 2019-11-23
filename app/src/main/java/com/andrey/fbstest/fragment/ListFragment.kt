@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.list_fragment.*
 class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
 
     private lateinit var viewModel: MainActivityViewModel
-    var adapter: RecyclerAdapter? = null
+    private var adapter: RecyclerAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,6 +80,21 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
 
     fun showLoadingProgressInTheEnd() {
         progressBarInTheEnd.visibility = View.VISIBLE
+    }
+
+    fun showLoading(){
+        progressBar.visibility=View.VISIBLE
+        recyclerView.visibility=View.GONE
+    }
+
+    fun hideLoading(){
+        try {
+
+            progressBar.visibility=View.GONE
+        recyclerView.visibility=View.VISIBLE
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun hideLoadingProgressInTheEnd() {

@@ -7,6 +7,6 @@
 
     <string name="items_are_missing">По вашему запросу ничего не найдено</string>
     <string name="profile_name">Имя</string>
-
+    <string name="hint_search">Введите запрос</string>
 
 </resources>

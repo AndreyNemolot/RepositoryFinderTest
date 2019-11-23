@@ -26,22 +26,26 @@ class ProfileFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(activity!!).get(
-            MainActivityViewModel::class.java)
+            MainActivityViewModel::class.java
+        )
 
         setProfile()
     }
 
     fun setProfile() {
+        if (!isImagePathEmpty()) {
+            setSuccessProfile()
+        }
+    }
+
+    private fun isImagePathEmpty() = run { viewModel.chosenOwner.avatar_url.isEmpty() }
+
+    private fun setSuccessProfile() {
+        profileCard.visibility=View.VISIBLE
         Picasso.get().load(viewModel.chosenOwner.avatar_url)
             .error(R.drawable.baseline_image_black_48)
             .placeholder(R.drawable.progress_animation).into(profileImage)
         ownerName.text = viewModel.chosenOwner.login
-    }
-
-    private fun setErrorProfile() {
-        Picasso.get().load(R.drawable.baseline_image_black_48)
-            .into(profileImage)
-        ownerName.text = resources.getText(R.string.profile_download_error)
     }
 
 }
