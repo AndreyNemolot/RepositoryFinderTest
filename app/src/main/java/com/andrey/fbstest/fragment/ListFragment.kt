@@ -32,7 +32,8 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(activity!!).get(
-            MainActivityViewModel::class.java)
+            MainActivityViewModel::class.java
+        )
         adapter = RecyclerAdapter(this)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.setHasFixedSize(true)
@@ -82,20 +83,24 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
         progressBarInTheEnd.visibility = View.VISIBLE
     }
 
-    fun showLoading(){
-        progressBar.visibility=View.VISIBLE
-        recyclerView.visibility=View.GONE
-    }
-
-    fun hideLoading(){
-        try {
-
-            progressBar.visibility=View.GONE
-        recyclerView.visibility=View.VISIBLE
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
+//    fun showLoading() {
+////        try {
+//            progressBar.visibility = View.VISIBLE
+//            recyclerView.visibility = View.GONE
+////        }catch (e:Exception){
+////
+////        }
+//    }
+//
+//    fun hideLoading() {
+//        try {
+//
+//            progressBar.visibility = View.GONE
+//            recyclerView.visibility = View.VISIBLE
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//    }
 
     fun hideLoadingProgressInTheEnd() {
         try {
