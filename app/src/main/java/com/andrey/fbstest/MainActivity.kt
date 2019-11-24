@@ -121,15 +121,12 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun setListFragment() {
-//        if(listFragment.isAdded && listFragment.isVisible) return
         fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.listFragmentContainer, listFragment)
         fragmentTransaction.commit()
     }
 
     private fun setProfileFragment() {
-//        if(profileFragment.isAdded && profileFragment.isVisible) return
-
         fragmentTransaction = supportFragmentManager.beginTransaction()
         if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragmentTransaction.addToBackStack(null)
@@ -161,19 +158,16 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun showLoadingState() {
-//        listFragment.showLoading()
         progressBar.visibility=View.VISIBLE
         errorMessage.visibility = View.GONE
         listFragmentContainer.visibility=View.GONE
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             profileFragmentContainer.visibility = View.VISIBLE
         }
-
     }
 
     private fun showDataState(dataList: ArrayList<RepoItem>) {
         listFragment.setList(dataList)
-//        listFragment.hideLoading()
         progressBar.visibility=View.GONE
         errorMessage.visibility = View.GONE
         listFragment.hideLoadingProgressInTheEnd()
@@ -184,7 +178,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         errorMessage.text = message
         errorMessage.visibility = View.VISIBLE
         progressBar.visibility=View.GONE
-//        listFragment.hideLoading()
     }
 
 

@@ -28,7 +28,6 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
         return inflater.inflate(R.layout.list_fragment, container, false)
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(activity!!).get(
@@ -37,13 +36,9 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
         adapter = RecyclerAdapter(this)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.setHasFixedSize(true)
-
         recyclerView.adapter = adapter
         setList(viewModel.repositoryList)
-
         registerScrollListener()
-
-
     }
 
     private fun registerScrollListener() {
@@ -58,11 +53,9 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
         })
     }
 
-
     fun setList(list: ArrayList<RepoItem>) {
         adapter?.setRepositories(list)
     }
-
 
     private fun isLastItemDisplaying(recyclerView: RecyclerView): Boolean {
         if (recyclerView.adapter!!.itemCount != 0) {
@@ -78,29 +71,9 @@ class ListFragment : Fragment(), RecyclerAdapter.OnItemClickListener {
         (activity as MainActivity).showProfile(adapter!!.repoList[position].owner)
     }
 
-
     fun showLoadingProgressInTheEnd() {
         progressBarInTheEnd.visibility = View.VISIBLE
     }
-
-//    fun showLoading() {
-////        try {
-//            progressBar.visibility = View.VISIBLE
-//            recyclerView.visibility = View.GONE
-////        }catch (e:Exception){
-////
-////        }
-//    }
-//
-//    fun hideLoading() {
-//        try {
-//
-//            progressBar.visibility = View.GONE
-//            recyclerView.visibility = View.VISIBLE
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//    }
 
     fun hideLoadingProgressInTheEnd() {
         try {

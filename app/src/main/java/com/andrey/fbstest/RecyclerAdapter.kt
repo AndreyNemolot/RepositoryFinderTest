@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-import java.util.ArrayList;
+import java.util.ArrayList
 import android.view.LayoutInflater
 import android.widget.TextView
 import com.andrey.fbstest.model.repository.RepoItem
@@ -56,7 +56,6 @@ class RecyclerAdapter(private var listener: OnItemClickListener): RecyclerView.A
 
         val repoName:TextView = itemView.repoName
         val projectLanguage:TextView = itemView.projectLanguage
-
 
         fun bind(listener: OnItemClickListener?){
             if (listener != null) {

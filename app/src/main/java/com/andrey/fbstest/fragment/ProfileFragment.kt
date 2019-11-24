@@ -28,7 +28,6 @@ class ProfileFragment : Fragment() {
         viewModel = ViewModelProviders.of(activity!!).get(
             MainActivityViewModel::class.java
         )
-
         setProfile()
     }
 
